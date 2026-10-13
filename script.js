@@ -1,24 +1,30 @@
-// ===== Bagian A: getElementsByClassName =====
-const buah = document.getElementsByClassName("buah");
+// ===== querySelector: memilih SATU elemen =====
+const judul = document.querySelector("#judul");
+judul.style.color = "darkblue";
  
-console.log(buah);          // lihat koleksinya
-console.log(buah.length);   // jumlah elemen
-console.log(buah[0]);       // elemen pertama
+const kartuPertama = document.querySelector("kartu");
+console.log(kartuPertama);
  
-// mengubah elemen tertentu
-buah[0].style.color = "red";
+const hargaPertama = document.querySelector("kartu .harga");
+hargaPertama.style.fontWeight = "bold";
  
-// mengubah semua elemen dengan perulangan
-for (let i = 0; i < buah.length; i++) {
-  buah[i].style.fontWeight = "bold";
-  buah[i].textContent = (i + 1) + ". " + buah[i].textContent;
-}
+const menuPertama = document.querySelector(".menu li:first-child");
+menuPertama.style.color = "red";
  
-// ===== Bagian B: getElementsByTagName =====
-const semuaLi = document.getElementsByTagName("li");
+// ===== querySelectorAll: memilih BANYAK elemen =====
+const semuaKartu = document.querySelectorAll("kartu");
+console.log(semuaKartu.length);
  
-console.log(semuaLi.length);
+semuaKartu.forEach(function (kartu) {
+  kartu.style.border = "2px solid teal";
+  kartu.style.padding = "10px";
+  kartu.style.margin = "10px 0";
+});
  
-for (let i = 0; i < semuaLi.length; i++) {
-  semuaLi[i].style.backgroundColor = "lightyellow";
-}
+const semuaHarga = document.querySelectorAll(".harga");
+semuaHarga.forEach((harga) => {
+  harga.style.color = "green";
+});
+ 
+const semuaMenu = document.querySelectorAll(".menu li");
+console.log(semuaMenu.length);
